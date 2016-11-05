@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-app.get('/webhook', function (req, res) {
+router.get('/webhook', function (req, res) {
   if (req.query['hub.verify_token'] === 'asdgfdhjgjhlkhjhgfd') {
     res.send(req.query['hub.challenge']);
   } else {

@@ -1,1 +1,1 @@
-web: node Source/ChatBot/bin/www
+web: node bin/www
