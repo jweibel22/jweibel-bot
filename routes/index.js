@@ -48,9 +48,9 @@ router.post('/webhook/', function (req, res) {
   for (i = 0; i < messaging_events.length; i++) {
     event = req.body.entry[0].messaging[i]
     sender = event.sender.id
-    if (event.message && event.message.text && !event.is_echo) {
+    if (event.message && event.message.text && !event.message.is_echo) {
       text = event.message.text
-      console.log('Event: ', event.message)
+      console.log('Responding to message: ', event.message)
       sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
     }
   }
