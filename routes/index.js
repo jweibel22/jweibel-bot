@@ -31,8 +31,10 @@ router.get('/', function(req, res, next) {
 
 router.get('/webhook', function (req, res) {
   if (req.query['hub.verify_token'] === 'asdgfdhjgjhlkhjhgfd') {
+    console.log("hub challenge OK")
     res.send(req.query['hub.challenge']);
   } else {
+    console.log("Wrong validation token: " + req.query['hub.verify_token'])
     res.send('Error, wrong validation token');
   }
 });
